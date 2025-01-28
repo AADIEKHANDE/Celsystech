@@ -17,19 +17,19 @@ const Navbar = () => {
         {/* Centered Navigation Menu for Larger Screens */}
         <div className="hidden md:flex space-x-8">
           
-          <Link to="section1" smooth={true} duration={500} className="text-gray-800 hover:text-blue-600">
+          <Link to="section1" smooth={true} duration={500} className="text-gray-800 hover:text-blue-600 nav-link">
             Home
           </Link>
-          <Link to="section2" smooth={true} duration={500} className="text-gray-800 hover:text-blue-600">
+          <Link to="section2" smooth={true} duration={500} className="text-gray-800 hover:text-blue-600 nav-link">
             About Us
           </Link>
-          <Link to="section3" smooth={true} duration={500} className="text-gray-800 hover:text-blue-600">
+          <Link to="section3" smooth={true} duration={500} className="text-gray-800 hover:text-blue-600 nav-link">
             Services
           </Link>
-          <Link to="section4" smooth={true} duration={500} className="text-gray-800 hover:text-blue-600">
+          <Link to="section4" smooth={true} duration={500} className="text-gray-800 hover:text-blue-600 nav-link">
             Blog
           </Link>
-          <Link to="section5" smooth={true} duration={500} className="text-gray-800 hover:text-blue-600">
+          <Link to="section5" smooth={true} duration={500} className="text-gray-800 hover:text-blue-600 nav-link">
             Contact
           </Link>
 
@@ -70,7 +70,7 @@ const Navbar = () => {
 
         {/* Get Quote Button */}
         <div className="hidden md:block">
-          <a href="#quote" className="bg-emerald-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-emerald-700">
+          <a href="#quote" className="bg-emerald-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-emerald-700 button">
             Get a Quote
           </a>
         </div>

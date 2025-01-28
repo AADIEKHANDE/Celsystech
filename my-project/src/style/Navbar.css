@@ -1,8 +1,22 @@
-.nav-bg{
+.nav-bg {
     background: rgba(255, 255, 255, 0);
     /* border-radius: 16px; */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10.8px);
     -webkit-backdrop-filter: blur(10.8px);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    }
+}
+
+.nav-link{
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.nav-link:hover{
+    transform: scale(1.1); /* Grows without affecting layout */
+}
+
+.button{
+    border-radius: 50px;
+    cursor: pointer;
+}
