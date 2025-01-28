@@ -2,6 +2,8 @@ import React from 'react'
 import Navbar from './Navbar'
 import '../style/Home.css'
 import Typewriter from 'typewriter-effect';
+import { Link, animateScroll as scroll } from "react-scroll";
+
 
 
 const Home = () => {
