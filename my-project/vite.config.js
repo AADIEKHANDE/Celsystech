@@ -9,7 +9,7 @@ export default defineConfig({
     tailwindcss()],
     build: {
       rollupOptions: {
-        external: ['react-scroll'],
+        external: ['react-scroll','typewriter-effect'],
       },
     },
 })
