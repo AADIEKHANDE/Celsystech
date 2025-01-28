@@ -1,0 +1,15 @@
+.root{
+    margin-top: 4rem;
+    padding: 8rem;
+}
+
+.main-heading{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.typewriter{
+    /* background-color: green; */
+    color: rgb(38, 199, 100);
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.171);
+}
