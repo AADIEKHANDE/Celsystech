@@ -19,19 +19,19 @@ const Navbar = () => {
         {/* Centered Navigation Menu for Larger Screens */}
         <div className="hidden md:flex space-x-8">
           
-          <Link to="section1" smooth={true} duration={500} className="text-gray-800 hover:text-blue-600 nav-link">
+          <Link to="home" smooth={true} duration={500} className="text-gray-800 hover:text-emerald-600 nav-link">
             Home
           </Link>
-          <Link to="section2" smooth={true} duration={500} className="text-gray-800 hover:text-blue-600 nav-link">
+          <Link to="about" smooth={true} duration={500} className="text-gray-800 hover:text-emerald-600 nav-link">
             About Us
           </Link>
-          <Link to="section3" smooth={true} duration={500} className="text-gray-800 hover:text-blue-600 nav-link">
+          <Link to="services" smooth={true} duration={500} className="text-gray-800 hover:text-emerald-600 nav-link">
             Services
           </Link>
-          <Link to="section4" smooth={true} duration={500} className="text-gray-800 hover:text-blue-600 nav-link">
+          <Link to="blog" smooth={true} duration={500} className="text-gray-800 hover:text-emerald-600 nav-link">
             Blog
           </Link>
-          <Link to="section5" smooth={true} duration={500} className="text-gray-800 hover:text-blue-600 nav-link">
+          <Link to="contact" smooth={true} duration={500} className="text-gray-800 hover:text-emerald-600 nav-link">
             Contact
           </Link>
 
@@ -82,12 +82,12 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-lg">
           <div className="flex flex-col items-center space-y-4 py-4">
-            <a href="#home" className="text-gray-800 hover:text-blue-600">Home</a>
-            <a href="#about" className="text-gray-800 hover:text-blue-600">About Us</a>
-            <a href="#services" className="text-gray-800 hover:text-blue-600">Services</a>
-            <a href="#blog" className="text-gray-800 hover:text-blue-600">Blog</a>
-            <a href="#contact" className="text-gray-800 hover:text-blue-600">Contact</a>
-            <a href="#quote" className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700">
+            <a href="#home" className="text-gray-800 hover:text-emerald-600">Home</a>
+            <a href="#about" className="text-gray-800 hover:text-emerald-600">About Us</a>
+            <a href="#services" className="text-gray-800 hover:text-emerald-600">Services</a>
+            <a href="#blog" className="text-gray-800 hover:text-emerald-600">Blog</a>
+            <a href="#contact" className="text-gray-800 hover:text-emerald-600">Contact</a>
+            <a href="#quote" className="bg-emerald-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-emerald-700">
               Get Quote
             </a>
           </div>
