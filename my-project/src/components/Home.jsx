@@ -306,20 +306,20 @@ const Home = () => {
 
           {/* Services Section */}
           <motion.section
-            id="services"
-            className="h-screen p-8 sm:p-30"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-          >
-            <motion.div className="text-xl text-center">
-              <motion.h1
-                variants={itemVariants}
-                className="text-center sm:text-6xl text-4xl mb-15 font-bold"
-              >
-                WHAT DO WE PROVIDE?
-              </motion.h1>
+  id="services"
+  className="min-h-screen p-8 sm:p-30 overflow-hidden" // Changed from h-screen to min-h-screen
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={containerVariants}
+>
+  <motion.div className="text-xl text-center">
+    <motion.h1
+      variants={itemVariants}
+      className="text-center sm:text-6xl text-4xl mb-15 font-bold"
+    >
+      WHAT DO WE PROVIDE?
+    </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -354,14 +354,31 @@ const Home = () => {
 
             <motion.div
               variants={itemVariants}
-              className="overflow-x-auto horizontal-scroll mt-20 custom-scrollbar"
+              className="
+    w-full 
+    overflow-x-auto 
+    horizontal-scroll 
+    mt-20 
+    custom-scrollbar 
+    pb-6 
+    no-scrollbar // Added to hide scrollbar if needed
+  "
             >
-              <div className="inline-flex space-x-4">
+              <div
+                className="
+      flex 
+      space-x-6 
+      px-4 
+      pb-4 // Added bottom padding
+      w-max // Use w-max to ensure content determines width
+      mx-auto // Center the content
+    "
+              >
                 {[
                   {
                     name: "Website Development",
                     description: "Build stunning, high-performance websites",
-                    icon: "💻", // Added icons for visual interest
+                    icon: "💻",
                   },
                   {
                     name: "Android Development",
@@ -389,56 +406,57 @@ const Home = () => {
                     icon: "🖌️",
                   },
                 ].map((service, index) => (
-<motion.div
-  key={index}
-  variants={itemVariants}
-  className="
-    w-72 
-    h-80 
-    bg-emerald-400 
-    text-white 
-    rounded-lg 
-    shadow-lg 
-    p-6 
-    flex 
-    flex-col 
-    justify-between 
-    items-center 
-    transform 
-    transition-all 
-    duration-300 
-    ease-in-out
-    hover:shadow-2xl // Enhanced shadow on hover
-  "
-  whileHover={{
-    scale: 1.05,
-    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-    backgroundColor: "#059669", // Slightly darker emerald on hover
-    transition: {
-      duration: 0.3,
-      type: "spring",
-      stiffness: 300,
-    }
-  }}
-  whileTap={{ scale: 0.95 }}
->
-  {/* Icon */}
-  <motion.div
-    className="text-6xl mb-4"
-    initial={{ opacity: 0, scale: 0.5 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.5 }}
-    whileHover={{ 
-      rotate: [0, 10, -10, 0], // Slight wiggle animation
-      transition: { duration: 0.5 }
-    }}
-  >
-    {service.icon}
-  </motion.div>
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="
+          flex-shrink-0 // Prevent items from shrinking
+          w-72 
+          h-80 
+          bg-emerald-400 
+          text-white 
+          rounded-lg 
+          shadow-lg 
+          p-6 
+          flex 
+          flex-col 
+          justify-between 
+          items-center 
+          transform 
+          transition-all 
+          duration-300 
+          ease-in-out
+          hover:shadow-2xl
+        "
+                    whileHover={{
+                      scale: 1.05,
+                      boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                      backgroundColor: "#059669",
+                      transition: {
+                        duration: 0.3,
+                        type: "spring",
+                        stiffness: 300,
+                      },
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {/* Icon */}
+                    <motion.div
+                      className="text-6xl mb-4"
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5 }}
+                      whileHover={{
+                        rotate: [0, 10, -10, 0], // Slight wiggle animation
+                        transition: { duration: 0.5 },
+                      }}
+                    >
+                      {service.icon}
+                    </motion.div>
 
-  {/* Service Name */}
-  <motion.h1
-    className="
+                    {/* Service Name */}
+                    <motion.h1
+                      className="
       text-center 
       text-2xl 
       font-bold 
@@ -446,40 +464,40 @@ const Home = () => {
       text-white 
       opacity-100
     "
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-    whileHover={{ 
-      scale: 1.1,
-      transition: { duration: 0.2 }
-    }}
-  >
-    {service.name}
-  </motion.h1>
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                      whileHover={{
+                        scale: 1.1,
+                        transition: { duration: 0.2 },
+                      }}
+                    >
+                      {service.name}
+                    </motion.h1>
 
-  {/* Description */}
-  <motion.p
-    className="
+                    {/* Description */}
+                    <motion.p
+                      className="
       text-center 
       text-sm 
       opacity-90 
       text-white 
       mb-4
     "
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: 0.2 }}
-    whileHover={{ 
-      scale: 1.05,
-      transition: { duration: 0.2 }
-    }}
-  >
-    {service.description}
-  </motion.p>
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                      whileHover={{
+                        scale: 1.05,
+                        transition: { duration: 0.2 },
+                      }}
+                    >
+                      {service.description}
+                    </motion.p>
 
-  {/* Learn More Button */}
-  <motion.button
-    className="
+                    {/* Learn More Button */}
+                    <motion.button
+                      className="
       bg-white 
       text-emerald-500 
       px-4 
@@ -489,20 +507,20 @@ const Home = () => {
       transition 
       duration-300
     "
-    whileHover={{ 
-      scale: 1.1,
-      backgroundColor: "#f0fdf4", // Very light emerald background
-      transition: { 
-        duration: 0.2,
-        type: "spring",
-        stiffness: 300
-      }
-    }}
-    whileTap={{ scale: 0.95 }}
-  >
-    Learn More
-  </motion.button>
-</motion.div>
+                      whileHover={{
+                        scale: 1.1,
+                        backgroundColor: "#f0fdf4", // Very light emerald background
+                        transition: {
+                          duration: 0.2,
+                          type: "spring",
+                          stiffness: 300,
+                        },
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Learn More
+                    </motion.button>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
