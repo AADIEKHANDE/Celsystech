@@ -4,15 +4,34 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
+import SplashScreen from './components/SplashScreen'
 
-function App() {
-  const [count, setCount] = useState(0)
+// function App() {
+//   const [count, setCount] = useState(0)
 
+//   return (
+//     <>
+//      <Home/>
+//     </>
+//   )
+// }
+
+const MainApp = () => {
   return (
     <>
-     <Home/>
+      <Home/>
     </>
-  )
-}
+  );
+};
+
+const App = () => {
+  const [showSplash, setShowSplash] = useState(true);
+
+  return showSplash ? (
+    <SplashScreen onComplete={() => setShowSplash(false)} />
+  ) : (
+    <MainApp />
+  );
+};
 
 export default App
